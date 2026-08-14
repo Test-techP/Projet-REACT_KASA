@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+import logo from "../../assets/images/logo.svg";
 
 function Header() {
   const getLinkClassName = ({ isActive }) => {
@@ -10,12 +11,9 @@ function Header() {
   return (
     <header className="header">
       <div className="header__container">
-        <NavLink
-          to="/"
-          className="header__logo"
-          aria-label="Retourner à l'accueil"
-        >
-          Kasa
+        
+        <NavLink to="/" aria-label="Retour à l'accueil">
+          <img src={logo} alt="Kasa" />
         </NavLink>
 
         <nav className="header__navigation" aria-label="Navigation principale">

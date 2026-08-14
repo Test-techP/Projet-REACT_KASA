@@ -1,0 +1,25 @@
+.properties {
+  margin-top: 40px;
+  padding: 50px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+
+  background-color: #f6f6f6;
+  border-radius: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  .properties {
+    padding: 0;
+    grid-template-columns: 1fr;
+    gap: 20px;
+
+    background-color: transparent;
+  }
+
+  .card {
+    height: 255px;
+  }
+}
