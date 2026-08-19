@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Collapse.css";
+import arrow from "../../assets/icons/arrow_back_ios-24px.svg";
 
 function Collapse({ title, content }) {
     const [isOpen, setIsOpen] = useState(false);
@@ -17,15 +18,20 @@ function Collapse({ title, content }) {
             >
                 <span>{title}</span>
 
-                <span
-                    className={`collapse__arrow ${isOpen ? "collapse__arrow--open" : ""
-                        }`}
-                >
-                    ▲
-                </span>
+                <img
+                    src={arrow}
+                    alt=""
+                    className={`collapse__arrow ${
+                        isOpen ? "collapse__arrow--open" : ""
+                    }`}
+                />
             </button>
 
-            {isOpen && (
+            <div
+                className={`collapse__wrapper ${
+                    isOpen ? "collapse__wrapper--open" : ""
+                }`}
+            >
                 <div className="collapse__content">
                     {Array.isArray(content) ? (
                         <ul className="collapse__list">
@@ -37,7 +43,7 @@ function Collapse({ title, content }) {
                         <p>{content}</p>
                     )}
                 </div>
-            )}
+            </div>
         </div>
     );
 }

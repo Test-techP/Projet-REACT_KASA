@@ -1,45 +1,80 @@
 .collapse {
-  width: 100%;
+    width: 100%;
 }
 
 .collapse__header {
-  width: 100%;
-  min-height: 52px;
-  padding: 10px 15px;
+    position: relative;
+    z-index: 2;
 
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    width: 100%;
+    min-height: 52px;
+    padding: 10px 15px;
 
-  border: none;
-  border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-  background-color: #ff6060;
-  color: white;
+    border: none;
+    border-radius: 5px;
 
-  font-size: 24px;
-  font-weight: 700;
+    background-color: #ff6060;
+    color: white;
 
-  cursor: pointer;
+    font-size: 24px;
+    font-weight: 700;
+
+    cursor: pointer;
 }
 
+
+/* FLÈCHE */
+
 .collapse__arrow {
-  display: inline-block;
-  transition: transform 0.3s ease;
+    width: 24px;
+    height: 24px;
+
+    transition: transform 0.4s ease;
 }
 
 .collapse__arrow--open {
-  transform: rotate(-180deg);
+    transform: rotate(-180deg);
+}
+
+
+/* VOLET */
+
+.collapse__wrapper {
+    display: grid;
+    grid-template-rows: 0fr;
+
+    transition: grid-template-rows 0.4s ease;
+}
+
+.collapse__wrapper--open {
+    grid-template-rows: 1fr;
 }
 
 .collapse__content {
-  padding: 20px;
+    min-height: 0;
+    overflow: hidden;
 
-  border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
 
-  background-color: #f6f6f6;
-  color: black;
+    background-color: #f6f6f6;
+    color: black;
 
-  font-size: 18px;
-  line-height: 1.4;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.collapse__content p {
+    margin: 0;
+    padding: 20px;
+}
+
+.collapse__list {
+    margin: 0;
+    padding: 20px;
+
+    list-style: none;
 }
